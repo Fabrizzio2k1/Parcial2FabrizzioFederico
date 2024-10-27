@@ -2,12 +2,13 @@ package Ejercicio1;
 
 public class Mecanico {
 	private String nombre;
-	private Vehiculo vehiculo;
+	private Taller taller;
 	
-	public Mecanico(String nombre, Vehiculo vehiculo) {
+	
+	public Mecanico() {
 		super();
-		this.nombre = nombre;
-		this.vehiculo = vehiculo;
+		this.nombre = "No asignado";
+		this.taller = null;
 	}
 
 	public String getNombre() {
@@ -18,15 +19,8 @@ public class Mecanico {
 		this.nombre = nombre;
 	}
 
-	public Vehiculo getVehiculo() {
-		return vehiculo;
-	}
-
-	public void setVehiculo(Vehiculo vehiculo) {
-		this.vehiculo = vehiculo;
-	}
 	
-	public void realizarVerificacion(Vehiculo vehiculo) {
+	public void realizarVerificacion() {
 		
 	}
 }

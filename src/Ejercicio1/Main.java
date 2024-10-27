@@ -9,26 +9,26 @@ public class Main {
 		Duenio d1 = new Duenio();
 		Auto a1 = new Auto(d1);
 		Moto m1 = new Moto(d1);
-		String opciones [] = {"Ingrese Vehiculo","Salir"};
-		String vehiculo [] = {"Moto","Auto"};
+		Taller t1 = new Taller();
+		String vehiculo [] = {"Auto","Moto","Salir"};
 		int elegido;
 		do {
-			elegido = JOptionPane.showOptionDialog(null, "Elija una opcion", "Taller Tano", 0, 0, null, opciones, opciones[0]);
+			elegido = JOptionPane.showOptionDialog(null, "Bienvenido al Taller\nSelecione Tipo de Vehiculo", "Taller Tano", 0, 0, null, vehiculo, vehiculo[0]);
 			switch (elegido) {
 			case 0:
-				elegido = JOptionPane.showOptionDialog(null, "Elija una opcion", "Taller Tano", 0, 0, null, vehiculo, vehiculo[0]);
-				switch (elegido) {
-				case 0:
-					a1.asignarDuenio(d1);
-					break;
-				case 1:
-					m1.asignarDuenio(d1);
-					break;
-				}
+				a1.asignarDuenio(d1);
+				t1.setVehiculo(a1);
+				t1.verMenu();
+				break;
+			case 1:
+				m1.asignarDuenio(d1);
+				t1.setVehiculo(m1);
+				t1.verMenu();
+				break;
 			default:
 				break;
 			}
-		} while (elegido!=1);
+		} while (elegido!=2);
 		
 	}
 
