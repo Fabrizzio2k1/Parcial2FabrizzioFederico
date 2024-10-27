@@ -17,7 +17,7 @@ public class Taller {
 	public Taller(Vehiculo vehiculo) {
 		super();
 		this.nombre = "El Tano";
-		this.ubicacion = "Av Corriente";
+		this.ubicacion = "Av Corriente 2666";
 		this.mecanico = new Mecanico(this);
 		this.vehiculo = vehiculo;
 		this.precio = 0;
@@ -69,7 +69,7 @@ public class Taller {
 	
 	public String verComprobante() {
 		return "Se realizo la Verificacion del Vehiculo de: " + vehiculo.getDuenio().getNombre() +"\nTrabajo Realizado por el Mecanico/a: "+ mecanico.getNombre() +
-				"\nMarca: " + vehiculo.getMarca() + "\nModelo: " + vehiculo.getModelo() + "\nPrecio Final: " + getPrecio() + " en la Fecha: " + LocalDate.now();
+				"\nMarca: " + vehiculo.getMarca() + "\nModelo: " + vehiculo.getModelo() + "\nPrecio Final: " + getPrecio() + " en la Fecha: " + LocalDate.now() + "\nTaller: " + getNombre()+ " 'Tu Taller de Confianza' " + "\nUbicación: " + getUbicacion();
 	}
 	
 	public void verMenu() {
