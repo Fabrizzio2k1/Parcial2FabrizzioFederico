@@ -1,5 +1,7 @@
 package Ejercicio1;
 
+import java.time.LocalDate;
+
 import javax.swing.JOptionPane;
 
 public class Taller {
@@ -12,12 +14,12 @@ public class Taller {
 	
 	
 
-	public Taller() {
+	public Taller(Vehiculo vehiculo) {
 		super();
 		this.nombre = "El Tano";
 		this.ubicacion = "Av Corriente";
-		this.mecanico = new Mecanico();
-		this.vehiculo = null;
+		this.mecanico = new Mecanico(this);
+		this.vehiculo = vehiculo;
 		this.precio = 0;
 	}
 
@@ -66,30 +68,38 @@ public class Taller {
 	}
 	
 	public String verComprobante() {
-		return "";
+		return "Se realizo la Verificacion del Vehiculo de: " + vehiculo.getDuenio().getNombre() +"\nTrabajo Realizado por el Mecanico/a: "+ mecanico.getNombre() +
+				"\nMarca: " + vehiculo.getMarca() + "\nModelo: " + vehiculo.getModelo() + "\nPrecio Final: " + getPrecio() + " en la Fecha: " + LocalDate.now();
 	}
 	
 	public void verMenu() {
-		String opciones [] = {"Asignar Mecanico","Ver Comprobante","Salir"};
+		String opciones [] = {"Asignar Mecanico","Relizar Verificacion","Ver Comprobante","Salir"};
 		int elegido;
 		do {
 			elegido = JOptionPane.showOptionDialog(null, "Elija una Opcion", "Menu del Taller", 0, 0, null, opciones, opciones[0]);
 			switch (elegido) {
 			case 0:
 				asignarMecanico();
-				JOptionPane.showMessageDialog(null, "Se asigno al mecanico " + mecanico.getNombre() + " Al Vehiculo Modelo " + vehiculo.getModelo());
 				break;
-			case 1:
+			case 1: 
 				if (mecanico.getNombre().equals("No asignado")) {
 					JOptionPane.showMessageDialog(null, "Tiene que asignar un Mecanico Primero...");
 				} else {
-					verComprobante();
+					String resultadoVerificacion = mecanico.realizarVerificacion();
+					JOptionPane.showMessageDialog(null, resultadoVerificacion);
+				}
+				break;
+			case 2:
+				if (vehiculo.isEstado()==false) {
+					JOptionPane.showMessageDialog(null, "Tiene que Realizar Verificacion Primero...");
+				} else {
+					JOptionPane.showMessageDialog(null, verComprobante());
 				}
 				break;
 			default:
 				break;
 			}
-		} while (elegido!=2);
+		} while (elegido!=3);
 	}
 	
 	public String validarCaracter(String mensaje) {

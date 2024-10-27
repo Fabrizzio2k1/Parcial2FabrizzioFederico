@@ -8,15 +8,36 @@ public class Vehiculo {
 	private String marca;
 	private String modelo;
 	private boolean estado;
+	private boolean motor;
+	private boolean aceite;
 	private Duenio duenio;
 	
-	public Vehiculo(int ruedas, String marca, String modelo, boolean estado, Duenio duenio) {
+	public Vehiculo(int ruedas, String marca, String modelo, boolean estado, boolean motor, boolean aceite,
+			Duenio duenio) {
 		super();
 		this.ruedas = ruedas;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.estado = estado;
+		this.motor = motor;
+		this.aceite = aceite;
 		this.duenio = duenio;
+	}
+	
+	public boolean isMotor() {
+		return motor;
+	}
+
+	public void setMotor(boolean motor) {
+		this.motor = motor;
+	}
+
+	public boolean isAceite() {
+		return aceite;
+	}
+
+	public void setAceite(boolean aceite) {
+		this.aceite = aceite;
 	}
 
 	public int getRuedas() {
