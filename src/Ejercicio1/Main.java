@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Duenio d1 = new Duenio();
-		Auto a1 = new Auto(false,d1,true);
+		Auto a1 = new Auto(d1);
 		String opciones [] = {"Ingrese Vehiculo","Salir"};
 		int elegido;
 		do {
@@ -15,8 +15,6 @@ public class Main {
 			switch (elegido) {
 			case 0:
 				a1.asignarDuenio(d1);
-				JOptionPane.showMessageDialog(null, a1.isEstado());
-				JOptionPane.showMessageDialog(null, a1.isVolante());
 				break;
 
 			default:
