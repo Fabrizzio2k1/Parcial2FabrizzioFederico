@@ -3,9 +3,9 @@ package Ejercicio1;
 public class Duenio {
 	private String nombre;
 
-	public Duenio(String nombre) {
+	public Duenio() {
 		super();
-		this.nombre = nombre;
+		this.nombre = "No asignado";
 	}
 
 	public String getNombre() {

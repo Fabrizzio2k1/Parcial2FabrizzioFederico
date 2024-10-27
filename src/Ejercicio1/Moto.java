@@ -16,4 +16,8 @@ public class Moto extends Vehiculo {
 		this.cadena = cadena;
 	}
 	
+	public void asignarDuenio(Duenio duenio) {
+		
+	}
+	
 }

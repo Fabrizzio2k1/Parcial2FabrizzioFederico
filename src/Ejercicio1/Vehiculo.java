@@ -1,5 +1,7 @@
 package Ejercicio1;
 
+import javax.swing.JOptionPane;
+
 public class Vehiculo {
 	
 	private int ruedas;
@@ -59,5 +61,25 @@ public class Vehiculo {
 	
 	public void asignarDuenio(Duenio duenio) {
 		
+	}
+	
+	public String validarCaracter(String mensaje) {
+		String texto = "";
+		Boolean flag;
+		do {
+			flag = true;
+			texto = JOptionPane.showInputDialog(mensaje);
+			while (texto.isEmpty()) {
+				texto = JOptionPane.showInputDialog(mensaje);
+			}
+			for (int i = 0; i < texto.length(); i++) {
+				if(!Character.isAlphabetic(texto.charAt(i))) {
+					flag = false;
+					break;
+				}
+			}
+		} while (!flag);
+		
+		return texto;
 	}
 }
