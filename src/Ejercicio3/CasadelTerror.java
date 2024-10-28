@@ -3,10 +3,9 @@ package Ejercicio3;
 public class CasadelTerror extends Atraccion {
 	private double distancia;
 
-	public CasadelTerror(int duracion, String calificacion, int capacidad, boolean requisito, Cliente cliente,
-			double distancia) {
-		super(duracion, calificacion, capacidad, requisito, cliente);
-		this.distancia = distancia;
+	public CasadelTerror(Cliente cliente) {
+		super(3, "No asignada", 50, false, cliente);
+		this.distancia = 100;
 	}
 
 	public double getDistancia() {
@@ -17,8 +16,14 @@ public class CasadelTerror extends Atraccion {
 		this.distancia = distancia;
 	}
 	
-	public void verificarRequisitos() {
-		
-	}
-	
+	@Override
+	public void verificarRequisitos(Cliente cliente) {
+		cliente.setNombre(validarCaracter("Ingrese su nombre"));
+		cliente.setEdad(validarNumeros("Ingrese su edad"));
+		if (getCliente().getEdad()>=16) {
+			setRequisito(true);
+		} else {
+			setRequisito(false);
+		}	
+}
 }

@@ -5,11 +5,11 @@ public class Cliente {
 	private double altura;
 	private int edad;
 	
-	public Cliente(String nombre, double altura, int edad) {
+	public Cliente() {
 		super();
-		this.nombre = nombre;
-		this.altura = altura;
-		this.edad = edad;
+		this.nombre = "No asignado";
+		this.altura = 0;
+		this.edad = 0;
 	}
 
 	public String getNombre() {

@@ -19,6 +19,7 @@ public class Auto extends Vehiculo {
 		this.volante = volante;
 	}
 	
+	@Override
 	public void asignarDuenio(Duenio duenio) {
 		String opcionesauto [] = {"Bueno", "Malo"};
 		String opcionaceite [] = {"Mucho", "Poco"};

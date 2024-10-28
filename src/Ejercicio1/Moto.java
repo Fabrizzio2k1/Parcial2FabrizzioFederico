@@ -18,6 +18,7 @@ public class Moto extends Vehiculo {
 		this.cadena = cadena;
 	}
 	
+	@Override
 	public void asignarDuenio(Duenio duenio) {
 		String opcionesmoto [] = {"Bueno", "Malo"};
 		String opcionaceite [] = {"Mucho", "Poco"};

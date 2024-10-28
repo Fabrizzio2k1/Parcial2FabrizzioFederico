@@ -1,5 +1,7 @@
 package Ejercicio3;
 
+import javax.swing.JOptionPane;
+
 public class Atraccion {
 	private int duracion;
 	private String calificacion;
@@ -56,8 +58,48 @@ public class Atraccion {
 		this.cliente = cliente;
 	}
 	
-	public void verificarRequisitos() {
+	public void verificarRequisitos(Cliente cliente) {
 		
+	}
+	
+	public int validarNumeros(String mensaje) {
+		boolean flag ;
+		String num ="" ;
+		do {
+			flag =true;
+			num = JOptionPane.showInputDialog(mensaje);
+			while (num.isEmpty()) {
+				num = JOptionPane.showInputDialog(mensaje);
+			}
+			for (int i = 0; i < num.length(); i++) {
+				if (!Character.isDigit(num.charAt(i))) {
+					flag = false;
+					break;
+				}
+			}
+		} while (!flag);
+		
+		return Integer.parseInt(num);
+	}
+	
+	public String validarCaracter(String mensaje) {
+		String texto = "";
+		Boolean flag;
+		do {
+			flag = true;
+			texto = JOptionPane.showInputDialog(mensaje);
+			while (texto.isEmpty()) {
+				texto = JOptionPane.showInputDialog(mensaje);
+			}
+			for (int i = 0; i < texto.length(); i++) {
+				if(!Character.isAlphabetic(texto.charAt(i))) {
+					flag = false;
+					break;
+				}
+			}
+		} while (!flag);
+		
+		return texto;
 	}
 	
 }
